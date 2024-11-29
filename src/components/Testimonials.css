@@ -1,0 +1,111 @@
+/* Testimonial.css */
+.testimonial-container {
+  background-color: rgb(235,235,235);
+  flex-direction: column;
+  display: flex;
+  overflow: hidden;
+  width: 100vw;
+  }
+
+.testimonial-box{
+  width: 95%;
+  max-width: 1200px;
+  padding-right: 40px;
+  padding-left: 40px;
+  min-height: 400px;
+  margin: 0px auto;
+  position: relative;
+}
+  
+  .testimonial-carousel {
+    position: relative;
+    overflow: hidden;
+    padding : 150px 50px;
+  }
+  
+  .testimonial-image{
+    position: absolute; /* Position relative to testimonial-content */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center the background */
+    width: 300px; /* Stretch to cover content */
+    height: 300px; /* Stretch to cover content */
+    background-size: cover; /* Ensure it covers the entire area */
+    z-index: 1; /* Send it behind the content */
+    opacity: 0.3;
+    background-image: url(https://res.cloudinary.com/cloud0310/image/upload/v1732660492/quote-18-double-close_ozprh6.svg);
+  }
+  .testimonial-slide {
+    transition: opacity 0.5s ease-in-out;
+  }
+  
+  .testimonial-content {
+    font-family: Montserrat;
+    opacity: 1;
+    position: relative;
+    background: none;
+    z-index: 2;
+  }
+  
+  .testimonial-text {
+    padding-top: 70px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .testimonial-author {
+    font-weight: bold;
+    color: #555;
+    text-align: center;
+    font-weight: 400;
+    line-height: 1.4;
+    padding-bottom: 30px;
+    padding-top: 25px;
+  }
+  
+  .testimonial-name {
+    font-weight: bold;
+    font-size: larger;
+    color: #555;
+  }
+
+  .testimonial-relation {
+    font-weight: 500;
+    font-size: large;
+    color: #f9a825;
+  }
+
+  .testimonial-indicators {
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+  }
+  
+  .testimonial-indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #ccc;
+    margin: 0 5px;
+    cursor: pointer;
+  }
+  
+  .testimonial-indicator.active {
+    background: linear-gradient(-180deg, rgb(225,152,32) 0%, rgb(249,86,30) 96%);
+    box-shadow: rgb(249,86,30,0.5) 0px 4px 10px 0px;
+  }
+
+  @media only screen and (max-width:620px){
+    .testimonial-text{
+      padding-top: 40px;
+      font-weight: 600;
+      font-size: 25px;
+      word-break: break-word;
+    }
+    .testimonial-carousel{
+      padding: 40px 15px;
+    }
+  }

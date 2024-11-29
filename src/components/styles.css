@@ -1,0 +1,53 @@
+/* Import Tailwind's base styles */
+@tailwind base;
+
+/* Import Tailwind's component styles */
+@tailwind components;
+
+/* Import Tailwind's utility styles */
+@tailwind utilities;
+
+/* Custom Styles (Optional for further customization) */
+
+/* Add shadows for buttons */
+.btn-orange {
+  @apply bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-lg shadow-md font-medium transition duration-300;
+}
+
+.btn-gray {
+  @apply bg-gray-200 hover:bg-gray-300 text-gray-700 px-6 py-3 rounded-lg shadow-md font-medium transition duration-300;
+}
+
+/* Style for the grid container in the Hero section */
+.grid-container {
+  @apply grid grid-cols-3 gap-4;
+}
+
+/* Circular images */
+.circle-image {
+  @apply object-cover rounded-full;
+}
+
+/* Heading styles for the Hero section */
+.hero-heading {
+  @apply text-4xl md:text-5xl font-bold text-orange-600 mb-4;
+}
+
+/* Paragraph styles for the Hero section */
+.hero-paragraph {
+  @apply text-gray-700 text-lg mb-6;
+}
+
+/* Hero section layout styles */
+.hero-section {
+  @apply bg-gray-100 py-16 px-8;
+}
+
+.hero-content {
+  @apply max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between;
+}
+
+/* Aspect ratio squares */
+.aspect-square {
+  @apply relative w-full pb-full;
+}

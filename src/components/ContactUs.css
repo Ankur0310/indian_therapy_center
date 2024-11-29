@@ -1,0 +1,55 @@
+.contact-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  padding-bottom: 50px;
+}
+
+.contact-heading {
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 15px;
+  margin-top: 30px;
+  color: rgb(37,37,37);
+  font-family: 'Montserrat', sans-serif;
+}
+
+.contact-content {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-direction: row;
+  height: 40vh;
+}
+
+.map-container {
+  height: 100%;
+  flex: 1;
+}
+
+.google_map{
+  width: 100%;
+  height: 100%;
+}
+
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .contact-content {
+    flex-direction: column;
+    align-items: center;
+  }
+  .map-container {
+    width: 100%;
+  }
+  .contact-container{
+    padding: 1.2rem;
+  }
+}
+
+@media only screen and (max-width:1024px) {
+  .contact-content{
+    flex-direction: column;
+  }
+}
