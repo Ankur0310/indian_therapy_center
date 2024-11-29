@@ -140,17 +140,17 @@
 }
 
 .response-message.success {
-    color: #1b7c32;
-    font-family: Montserrat;
-    background-color: #d4edda;
-    border: 1px solid #c3e6cb;
+  color: #49d889;
+  font-family: Montserrat;
+  background-color: #282b288e;
+  border: 1px solid #61945c;
 }
 
 .response-message.error {
-    color: #881d28;
+    color: #49d889;
     font-family: Montserrat;
-    background-color: #f8d7da;
-    border: 1px solid #f5c6cb;
+    background-color: #282b288e;
+    border: 1px solid #61945c;
 }
 
 

@@ -28,13 +28,13 @@ const Subscribe = () => {
     
             const result = await response.json();
             if (result.status === 'success') {
-                setResponseMessage('You will contacted soon');
+                setResponseMessage('Thanks 🤗');
                 event.target.reset(); // Clear the form
             } else {
-                setResponseMessage('Please try again later.');
+                setResponseMessage('Please try again later 😥');
             }
         } catch (error) {
-            setResponseMessage('Please try again later.');
+            setResponseMessage('Please try again later 😥');
             console.error('Error:', error);
         }
     };
