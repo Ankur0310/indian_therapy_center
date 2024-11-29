@@ -131,6 +131,28 @@
     outline: none;
   }
   
+  .response-message {
+    margin-top: 10px;
+    padding: 8px;
+    border-radius: 5px;
+    font-size: 12px;
+    text-align: center;
+}
+
+.response-message.success {
+    color: #1b7c32;
+    font-family: Montserrat;
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+}
+
+.response-message.error {
+    color: #881d28;
+    font-family: Montserrat;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+}
+
 
   @media only screen and (max-width:1012px){
     .sub_form-header{

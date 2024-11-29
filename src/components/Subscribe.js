@@ -3,19 +3,6 @@ import "./Subscribe.css";
 
 const Subscribe = () => {
     const [responseMessage, setResponseMessage] = useState('');
-
-    const [formData, setFormData] = useState({
-        name: "",
-        email: "",
-        phone: "",
-        query:"",
-        });
-    
-      const handleChange = (e) => {
-        const { name, value } = e.target;
-        setFormData({ ...formData, [name]: value });
-      };
-    
       const handleSubmit = async (event) => {
         event.preventDefault();
     
@@ -41,13 +28,13 @@ const Subscribe = () => {
     
             const result = await response.json();
             if (result.status === 'success') {
-                alert('Form submitted successfully!');
+                setResponseMessage('You will contacted soon');
                 event.target.reset(); // Clear the form
             } else {
-                alert('Error submitting form. Please try again.');
+                setResponseMessage('Please try again later.');
             }
         } catch (error) {
-            alert('Connection error. Please try again later.');
+            setResponseMessage('Please try again later.');
             console.error('Error:', error);
         }
     };
@@ -108,10 +95,11 @@ const Subscribe = () => {
                             </div>
                         </form>
                         {responseMessage && (
-                            <div className="response-message">
-                                <p>{responseMessage}</p>
-                            </div>
-                        )}
+                                <div 
+                                    className={`response-message ${responseMessage.includes('success') ? 'success' : 'error'}`}>
+                                    <p>{responseMessage}</p>
+                                </div>
+                            )}
                     </div>
                 </div>
             </div>
