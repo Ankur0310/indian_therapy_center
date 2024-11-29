@@ -4,38 +4,54 @@ import "./Subscribe.css";
 const Subscribe = () => {
     const [responseMessage, setResponseMessage] = useState('');
 
-    const handleSubmit = async (event) => {
+    const [formData, setFormData] = useState({
+        name: "",
+        email: "",
+        phone: "",
+        query:"",
+        });
+    
+      const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData({ ...formData, [name]: value });
+      };
+    
+      const handleSubmit = async (event) => {
         event.preventDefault();
-
+    
         // Collect form data
         const formData = {
             name: document.getElementById('name').value,
             email: document.getElementById('email').value,
             phone: document.getElementById('phone').value,
+            query: document.getElementById('query').value,
         };
-
+    
         // Replace this URL with your Google Apps Script Web App URL
-        const scriptURL = "https://script.google.com/macros/s/AKfycbyexxVa3K-OiFdPNBzGzauCMPIeVNrxrfk0Bg6w74VQHxdcmrjKiroehBCcodhAN3XURg/exec";
-
+        const baseURL = "https://script.google.com/macros/s/AKfycbyQRA3fWuIpnInPiSmELQzCkIQoK9sIVeSzop_Ob76OyeZEQcLTpwAwa1CZ00rPUQOP/exec";
+    
+        // Add query parameters
+        const query = new URLSearchParams(formData).toString();
+        const url = `${baseURL}?${query}`;
+    
         try {
-            const response = await fetch(scriptURL, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(formData),
+            const response = await fetch(url, {
+                method: 'GET',
             });
-
+    
             const result = await response.json();
             if (result.status === 'success') {
-                setResponseMessage('Form submitted successfully!');
+                alert('Form submitted successfully!');
                 event.target.reset(); // Clear the form
             } else {
-                setResponseMessage('Error submitting form. Please try again.');
+                alert('Error submitting form. Please try again.');
             }
         } catch (error) {
-            setResponseMessage('Connection error. Please try again later.');
+            alert('Connection error. Please try again later.');
             console.error('Error:', error);
         }
     };
+    
 
     return (
         <div className="sub_container">
@@ -82,7 +98,7 @@ const Subscribe = () => {
                             <div className="sub_form-field">
                             <textarea
                                 className="sub_form_input area_field"
-                                id="area"
+                                id="query"
                                 placeholder="Your query"
                                 required
                             ></textarea>
