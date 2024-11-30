@@ -20,7 +20,7 @@ const About = () => {
               <div className="smSquare a01">
                 <div className="about_logo">
                   <img
-                    src="https://res.cloudinary.com/cloud0310/image/upload/v1732740941/logo2_cizmos.png"
+                    src="https://res.cloudinary.com/cloud0310/image/upload/v1732657163/www.indiatherapycentre.com_20241124_143257_0000_b9wn6a.png"
                     alt="Logo"
                   />
                 </div>

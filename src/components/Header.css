@@ -26,13 +26,25 @@
   box-sizing: border-box;
 }
 
-.nav_name_left {
+.heading_header{
   font-weight: bold;
   font-size: larger;
 }
 
+.header_logo{
+  height: 40px;
+  width: 40px;
+  margin-right: 15px;
+}
+
+.nav_name_left {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
 .nav_name_left.hide {
-  display: none; /* Hide heading when the menu is open */
+  display: none; 
 }
 
 .nav_right {
